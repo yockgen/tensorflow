@@ -1,16 +1,13 @@
-"""sample test"""
 import unittest
 
-from hello import hello
 
+class TestSum(unittest.TestCase):
 
-class TestHello(unittest.TestCase):
-    """sample test"""
+    def test_sum(self):
+        self.assertEqual(sum([1, 2, 3]), 6, "Should be 6")
 
-    def test_world(self):
-        """sample test"""
-        self.assertEqual(hello('world'), 'hello world')
+    def test_sum_tuple(self):
+        self.assertEqual(sum((1, 2, 2)), 6, "Should be 6")
 
-    def test_world_unicode(self):
-        """sample test with unicode"""
-        self.assertEqual(hello(u'world'), u'hello world')
+if __name__ == '__main__':
+    unittest.main()
